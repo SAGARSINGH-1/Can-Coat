@@ -1,8 +1,8 @@
 import { Routes, Route, Navigate } from "react-router-dom";
-import Layout from "./layouts/Layout";
-import Home from "./pages/Home";
+import Layout from "./layouts/layout.jsx";
+import Home from "./pages/Home.jsx";
 import About from "./pages/About.jsx";
-import Contact from "./pages/Contact";
+import Contact from "./pages/Contact.jsx";
 
 export default function App() {
   return (
