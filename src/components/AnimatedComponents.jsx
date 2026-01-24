@@ -1,6 +1,8 @@
-import { motion, AnimatePresence } from "framer-motion";
-import { useEffect, useState } from "react";
+import { motion, AnimatePresence, useInView, useAnimation } from "framer-motion";
+import { useEffect, useState, useRef } from "react";
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import productVideo from "../assets/product.mp4";
 
 export function ProductCard({ image, title, description }) {
     return (
@@ -82,6 +84,8 @@ export function ProductCard({ image, title, description }) {
 
 // 2. Hero Banner - WITH CAN-COAT LOGO + CURSOR POINTERS
 export function HeroBanner({ title, subtitle, ctaText, image }) {
+    const navigate = useNavigate();
+
     return (
         <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 to-slate-950 py-20">
             <div className="max-w-5xl mx-auto px-6 grid md:grid-cols-2 items-center gap-12">
@@ -119,11 +123,13 @@ export function HeroBanner({ title, subtitle, ctaText, image }) {
                         <motion.button
                             whileHover={{ scale: 1.03 }}
                             whileTap={{ scale: 0.98 }}
+                            onClick={() => { navigate("/product") }}
                             className="cursor-pointer bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-3.5 rounded-xl font-semibold text-base shadow-xl hover:shadow-emerald-500/30 transition-all duration-300"
                         >
                             {ctaText}
                         </motion.button>
                         <motion.button
+                            onClick={() => { navigate("/contact") }}
                             whileHover={{ scale: 1.01 }}
                             className="cursor-pointer border border-white/40 hover:border-white/70 text-white px-8 py-3.5 rounded-xl font-medium backdrop-blur-sm transition-all duration-300"
                         >
@@ -169,6 +175,8 @@ export function CategoryFilter({ active, label, onClick }) {
 
 // 4. FAQ Section - WITH CURSOR POINTERS
 export function FAQSection() {
+    let navigate = useNavigate();
+
     return (
         <section className="py-20 bg-gradient-to-r from-slate-50 to-slate-100">
             <div className="max-w-5xl mx-auto px-6">
@@ -187,7 +195,7 @@ export function FAQSection() {
                 </motion.div>
 
                 <div className="grid lg:grid-cols-2 gap-8 items-center">
-                    {/* Left - Video/Graphic */}
+                    {/* Left - FIXED VIDEO PLAYER (Infinite Auto-Play) */}
                     <motion.div
                         initial={{ opacity: 0, scale: 0.95 }}
                         whileInView={{ opacity: 1, scale: 1 }}
@@ -196,84 +204,85 @@ export function FAQSection() {
                         className="relative group cursor-pointer"
                     >
                         <div className="aspect-video bg-gradient-to-br rounded-3xl shadow-2xl overflow-hidden">
-                            <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
-                                <div className="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center group-hover:bg-white/30 transition-all duration-300">
-                                    <svg className="w-12 h-12 ml-2 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            {/* ✅ FIXED VIDEO - AUTO infinite LOOP */}
+                            <video
+                                src={productVideo}
+                                autoPlay
+                                muted
+                                loop
+                                playsInline
+                                preload="auto"
+                                className="w-full h-full object-cover"
+                                poster="https://th.bing.com/th/id/OIP.jKNZoEoh-dK0-44ZBWTHlAHaHa?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3"
+                            />
+                            {/* Subtle overlay for play button feel */}
+                            <div className="absolute inset-0 bg-black/10 backdrop-blur-sm flex items-center justify-center opacity-0 transition-all duration-300">
+                                <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center group-hover:bg-white/30 transition-all duration-300">
+                                    <svg className="w-10 h-10 ml-1 text-white" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M8 5v14l11-7z" />
                                     </svg>
                                 </div>
                             </div>
-                            <img
-                                src="https://th.bing.com/th/id/OIP.jKNZoEoh-dK0-44ZBWTHlAHaHa?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3"
-                                alt="Remove Scratches with Can-Coat"
-                                className="absolute inset-0 w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-500"
-                            />
                         </div>
-                        <div className="absolute -top-12 -right-12 w-32 h-32 bg-gradient-to-r from-red-400 to-orange-500 rounded-2xl shadow-xl rotate-12 opacity-60"></div>
-                        <div className="absolute bottom-6 left-6 bg-white/90 px-4 py-2 rounded-full text-sm font-semibold text-slate-800">
-                            Watch Video
+                        {/* ORIGINAL Label */}
+                        <div className="absolute bottom-6 left-6 bg-white p-4 rounded-lg shadow-md border-l-4 border-emerald-400">
+                            <span className="font-semibold text-emerald-800 text-base">Watch Video</span>
+                        </div>
+                        {/* ORIGINAL Decoration */}
+                        <div className="absolute -top-12 -right-12 bg-red-500 text-white px-3 py-1 rounded-br-lg font-bold text-xs shadow-lg rotate-[-15deg]">
+                            PLAY
                         </div>
                     </motion.div>
 
-                    {/* Right - FAQ Questions */}
+                    {/* Right - ORIGINAL FAQ DESIGN (Same fonts/sizes) */}
                     <motion.div
                         initial={{ opacity: 0, x: 40 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.6, delay: 0.2 }}
                         className="space-y-4"
                     >
-                        <div className="flex items-start gap-3 p-5 bg-white/70 backdrop-blur-xl rounded-2xl shadow-lg hover:shadow-xl border border-white/50 hover:border-emerald-200/50 transition-all duration-300">
+                        {/* ORIGINAL Q1 */}
+                        <div className="flex items-start gap-3 p-5 bg-white/70 backdrop-blur-sm rounded-2xl shadow-md border-l-4 border-red-400 hover:shadow-lg transition-all duration-300 cursor-pointer">
                             <div className="w-8 h-8 bg-gradient-to-r from-red-500 to-orange-500 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
-                                <span className="text-white font-bold text-sm">Q</span>
+                                <span className="text-white font-semibold text-xs">Q</span>
                             </div>
                             <div className="flex-1">
-                                <p className="font-semibold text-slate-900 text-base mb-1">
+                                <p className="font-semibold text-orange-900 text-base mb-1">
                                     Can I do it myself?
                                 </p>
-                                <p className="text-sm text-slate-600">
-                                    Yes! Our 7-step kit is designed for easy DIY application.
+                                <p className="text-xs text-slate-700 mt-1">
+                                    Yes! It is designed for easy DIY application.
                                 </p>
                             </div>
                         </div>
 
-                        <div className="flex items-start gap-3 p-5 bg-white/70 backdrop-blur-xl rounded-2xl shadow-lg hover:shadow-xl border border-white/50 hover:border-emerald-200/50 transition-all duration-300">
+                        {/* ORIGINAL Q2 */}
+                        <div className="flex items-start gap-3 p-5 bg-white/70 backdrop-blur-sm rounded-2xl shadow-md border-l-4 border-emerald-400 hover:shadow-lg transition-all duration-300 cursor-pointer">
                             <div className="w-8 h-8 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
-                                <span className="text-white font-bold text-sm">Q</span>
+                                <span className="text-white font-semibold text-xs">Q</span>
                             </div>
                             <div className="flex-1">
-                                <p className="font-semibold text-slate-900 text-base mb-1">
+                                <p className="font-semibold text-emerald-800 text-base mb-1">
                                     Will the color match?
                                 </p>
-                                <p className="text-sm text-slate-600">
-                                    Computerized color matching with 200+ automotive shades.
+                                <p className="text-xs text-slate-700 mt-1">
+                                    Computerized color matching with 200+ industrial shades.
                                 </p>
                             </div>
                         </div>
 
-                        <div className="flex items-start gap-3 p-5 bg-white/70 backdrop-blur-xl rounded-2xl shadow-lg hover:shadow-xl border border-white/50 hover:border-emerald-200/50 transition-all duration-300">
-                            <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
-                                <span className="text-white font-bold text-sm">Q</span>
-                            </div>
-                            <div className="flex-1">
-                                <p className="font-semibold text-slate-900 text-base mb-1">
-                                    What if color doesn't match?
-                                </p>
-                                <p className="text-sm text-slate-600">
-                                    Free replacement within 30 days with color verification.
-                                </p>
-                            </div>
-                        </div>
-
+                        {/* ORIGINAL CTA Buttons */}
                         <div className="flex items-center gap-3 pt-2">
                             <motion.button
+                                onClick={() => navigate("/faq")}
                                 whileHover={{ scale: 1.03 }}
-                                className="cursor-pointer bg-emerald-500 hover:bg-emerald-600 text-white px-6 py-3 rounded-xl font-semibold shadow-lg hover:shadow-emerald-500/30 transition-all"
+                                className="bg-emerald-500 hover:bg-emerald-600 text-white px-6 py-3 rounded-lg font-semibold text-sm shadow-lg hover:shadow-emerald-500/30 transition-all cursor-pointer"
                             >
-                                See More FAQs
+                                See FAQs
                             </motion.button>
                             <a
                                 href="https://wa.me/91958291715"
-                                className="cursor-pointer bg-green-500 hover:bg-green-600 text-white p-3 rounded-xl shadow-lg hover:shadow-green-500/30 transition-all"
+                                className="bg-green-500 hover:bg-green-600 text-white p-3 rounded-lg shadow-lg hover:shadow-green-500/30 transition-all cursor-pointer"
                             >
                                 💬 WhatsApp
                             </a>
@@ -304,23 +313,30 @@ export function TestimonialsSection() {
     const testimonials = [
         {
             text:
-                "Can-Coat has won my trust with their Value Pack Kit. It saved me time and money, and the quality of the touch-up is outstanding. A fantastic product I’ll keep coming back to.",
-            name: "BEENU TOMS",
-            city: "Bengaluru",
+                "Can-Coat has truly earned my trust with its excellent quality at an affordable price. It saved my both time and money, and the finish after touch-ups is outstanding. It’s a fantastic product that I’ll happily keep coming back to.",
+            name: "Rishab Jain",
+            city: "Jaipur",
             rating: 5,
         },
         {
             text:
-                "Color matching was accurate and the finish looked professional. The instructions were clear and the application felt easy even for a first-timer.",
-            name: "RAHUL SHARMA",
-            city: "Gurugram",
+                "The color matching was accurate, and the finish looked professional. The instructions were clear, and the application felt easy—even for a first-timer.",
+            name: "Tinu Pal",
+            city: "Manesar",
             rating: 5,
         },
         {
             text:
                 "Great coverage and quick drying. The overall kit quality is solid and the final result blended well with the original paint.",
-            name: "PRIYA VERMA",
-            city: "Delhi",
+            name: "Manoj Sharma",
+            city: "Gurgaon",
+            rating: 5,
+        },
+        {
+            text:
+                "Great coverage and quick drying. The overall kit quality is solid and the final result blended well with the original paint.",
+            name: "Sanjay",
+            city: "Gurgaon",
             rating: 4,
         },
     ];
@@ -420,6 +436,143 @@ export function TestimonialsSection() {
                         </AnimatePresence>
                     </div>
                 </div>
+            </div>
+        </section>
+    );
+}
+
+
+
+export function StatsCounter() {
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+
+    // Stats data from your image[file:29]
+    const stats = [
+        { number: 2000, suffix: "+", label: "Color Shades" },
+        { number: 150, suffix: "+", label: "Happy Customers" },
+        { number: 99.9, suffix: "%", label: "Customer Satisfaction" }
+    ];
+
+    const CountUp = ({ finalNumber, suffix, shouldAnimate }) => {
+        const [count, setCount] = useState(0);
+
+        useEffect(() => {
+            if (!shouldAnimate) return;
+
+            let start = 0;
+            const end = finalNumber;
+            const duration = 2500;
+            const stepTime = Math.abs(Math.floor(duration / end));
+            let timer;
+
+            const updateCount = () => {
+                start += 1;
+                setCount(start);
+
+                if (start >= end) {
+                    clearInterval(timer);
+                    setCount(end);
+                }
+            };
+
+            timer = setInterval(updateCount, stepTime);
+            return () => clearInterval(timer);
+        }, [shouldAnimate, finalNumber]);
+
+        return (
+            <motion.span
+                className="text-3xl md:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight"
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+            >
+                {count.toLocaleString()}
+                <span className="text-xl md:text-2xl lg:text-3xl font-bold text-red-500 ml-1">
+                    {suffix}
+                </span>
+            </motion.span>
+        );
+    };
+
+    return (
+        <section className="py-20 bg-gradient-to-br from-slate-50 via-white to-emerald-50/20">
+            <div ref={ref} className="max-w-6xl mx-auto px-6">
+                <motion.div
+                    initial="hidden"
+                    animate={isInView ? "animate" : "hidden"}
+                    variants={{
+                        hidden: { opacity: 0, y: 40 },
+                        animate: {
+                            opacity: 1,
+                            y: 0,
+                            transition: {
+                                staggerChildren: 0.15,
+                                delayChildren: 0.2
+                            }
+                        }
+                    }}
+                    className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 text-center"
+                >
+                    {stats.map((stat, index) => (
+                        <motion.div
+                            key={index}
+                            variants={{
+                                hidden: { opacity: 0, scale: 0.9, y: 20 },
+                                animate: {
+                                    opacity: 1,
+                                    scale: 1,
+                                    y: 0,
+                                    transition: {
+                                        duration: 0.6,
+                                        ease: "easeOut"
+                                    }
+                                }
+                            }}
+                            whileHover={{
+                                scale: 1.05,
+                                y: -8,
+                                boxShadow: "0 25px 50px rgba(0,0,0,0.15)"
+                            }}
+                            className="group relative p-8 md:p-10 rounded-3xl bg-white/80 backdrop-blur-xl shadow-xl hover:shadow-2xl hover:shadow-red-500/10 border border-white/50 hover:border-red-200/50 transition-all duration-500 cursor-pointer overflow-hidden"
+                        >
+
+                            {/* Counter - Only animates when in view */}
+                            <CountUp
+                                finalNumber={stat.number}
+                                suffix={stat.suffix}
+                                shouldAnimate={isInView}
+                            />
+
+                            {/* Label */}
+                            <motion.p
+                                variants={{
+                                    hidden: { opacity: 0 },
+                                    animate: { opacity: 1 }
+                                }}
+                                className="mt-4 text-sm md:text-base font-semibold text-slate-700 tracking-wide uppercase leading-tight"
+                            >
+                                {stat.label}
+                            </motion.p>
+
+                            {/* Glow effect */}
+                            <motion.div
+                                className="absolute inset-0 rounded-3xl bg-gradient-to-r from-red-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"
+                                initial={{ scale: 1 }}
+                                animate={{
+                                    scale: [1, 1.05, 1],
+                                    opacity: [0, 0.1, 0]
+                                }}
+                                transition={{
+                                    duration: 3,
+                                    repeat: Infinity,
+                                    ease: "easeInOut"
+                                }}
+                            />
+                        </motion.div>
+                    ))}
+                </motion.div>
             </div>
         </section>
     );

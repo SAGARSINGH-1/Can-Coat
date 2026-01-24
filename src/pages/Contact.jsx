@@ -43,7 +43,7 @@ export default function Contact() {
                             >
                                 <span className="text-emerald-600">📞</span>
                                 <div>
-                                    <p className="text-sm font-semibold text-slate-900">Main</p>
+                                    <p className="text-sm font-semibold text-slate-900">Office</p>
                                     <p className="text-sm text-slate-600">+91 95829 1715</p>
                                 </div>
                             </a>
@@ -52,12 +52,12 @@ export default function Contact() {
                                 href="tel:+919220373630"
                                 className="flex items-center gap-3 rounded-xl border border-slate-200 p-4 hover:bg-slate-50 transition-colors"
                             >
-                                <span className="text-emerald-600">📱</span>
+                                <span className="text-emerald-600">📞</span>
                                 <div>
                                     <p className="text-sm font-semibold text-slate-900">
-                                        Sales (Badal Singh)
+                                        Sales
                                     </p>
-                                    <p className="text-sm text-slate-600">+91 92203 73630</p>
+                                    <p className="text-sm text-slate-600">+91 93022 37448</p>
                                 </div>
                             </a>
 
@@ -73,7 +73,7 @@ export default function Contact() {
                             </a>
 
                             <a
-                                href="https://wa.me/91958291715"
+                                href="https://wa.me/+91 9302237448"
                                 className="inline-flex items-center justify-center rounded-xl bg-green-500 hover:bg-green-600 text-white font-semibold text-sm py-3 px-4 shadow-sm transition-colors"
                             >
                                 Chat on WhatsApp
@@ -97,25 +97,16 @@ export default function Contact() {
                     className="space-y-4"
                 >
                     <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-6">
-                        <h2 className="text-lg font-bold text-slate-900">Addresses</h2>
+                        <h2 className="text-lg font-bold text-slate-900">Address</h2>
 
                         <div className="mt-4 space-y-4">
-                            <div className="rounded-xl border border-slate-200 p-4">
-                                <p className="text-sm font-semibold text-slate-900">
-                                    Gurgaon (HR)
-                                </p>
-                                <p className="text-sm text-slate-600">
-                                    Near Alfa Hospital, Basai Road, Gurgaon (HR) 122001
-                                </p>
-                            </div>
 
                             <div className="rounded-xl border border-slate-200 p-4">
                                 <p className="text-sm font-semibold text-slate-900">
                                     Bahadurgarh (HR)
                                 </p>
                                 <p className="text-sm text-slate-600">
-                                    Balour Road, Opposite 24 Meter Road, Near Sector 11,
-                                    Bahadurgarh, Haryana 124507
+                                    Balour Road, Arya Nagar, Bahadurgarh, Haryana 124507
                                 </p>
                             </div>
                         </div>

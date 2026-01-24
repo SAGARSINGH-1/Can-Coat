@@ -9,84 +9,70 @@ export function Footer() {
             transition={{ duration: 0.5 }}
             className="bg-slate-950 text-white mt-16"
         >
-            <div className="max-w-6xl mx-auto px-6 py-14 grid gap-10 md:grid-cols-2">
-                {/* Left: Brand + info */}
-                <div className="space-y-4">
+            <div className="max-w-6xl mx-auto px-6 py-14 grid gap-10 md:grid-cols-4">
+                {/* Logo & Contact */}
+                <div className="space-y-6">
                     <CanCoatLogo className="w-[140px]" />
 
-                    <p className="text-sm text-slate-400 leading-relaxed max-w-md">
-                        India’s leading aerosol spray paint manufacturer. Professional spray
-                        solutions for automotive and industrial applications.
-                    </p>
-
-                    <div className="text-sm text-slate-400 space-y-1">
-                        <p>
-                            <span className="text-slate-300 font-semibold">GSTIN:</span>{" "}
-                            06RLMPS7423H1ZA
-                        </p>
-                        <p>
-                            <span className="text-slate-300 font-semibold">Email:</span>{" "}
-                            <a
-                                href="mailto:cancot0425@gmail.com"
-                                className="hover:text-emerald-400 transition-colors"
-                            >
-                                cancot0425@gmail.com
-                            </a>
-                        </p>
+                    <div className="text-sm text-slate-400 space-y-2">
+                        <div className="flex items-center gap-2">
+                            <span>📍</span>
+                            <span>Balour Road, Arya Nagar, Bahadurgarh, Haryana 124507</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                            <span>📞</span>
+                            <span>+91 93022 37448</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                            <span>📧</span>
+                            <span>cancot0425@gmail.com</span>
+                        </div>
                     </div>
                 </div>
 
-                {/* Right: Contact cards */}
+                {/* Useful Links */}
                 <div className="space-y-4">
-                    <h4 className="text-base font-semibold text-white">Contact</h4>
+                    <h4 className="text-base font-semibold">Useful Links</h4>
+                    <ul className="text-sm text-slate-300 space-y-2">
+                        <li><a href="/about" className="hover:text-emerald-400 transition-colors">About Us</a></li>
+                        <li><a href="/contact" className="hover:text-emerald-400 transition-colors">Contact</a></li>
+                        <li><a href="/privacy-policy" className="hover:text-emerald-400 transition-colors">Privacy Policy</a></li>
+                        <li><a href="/term-and-condition" className="hover:text-emerald-400 transition-colors">Terms & Conditions</a></li>
+                    </ul>
+                </div>
 
-                    <div className="grid gap-3">
-                        <div className="flex items-start gap-3 rounded-xl bg-white/5 border border-white/10 p-4">
-                            <span className="text-emerald-400 mt-0.5">📍</span>
-                            <div className="text-sm text-slate-300">
-                                <p className="font-semibold text-white">Office</p>
-                                <p className="text-slate-400">
-                                    Near Alfa Hospital, Basai Road, Gurgaon (HR) 122001
-                                </p>
-                            </div>
-                        </div>
+                {/* Products */}
+                <div className="space-y-4">
+                    <h4 className="text-base font-semibold">Products</h4>
+                    <ul className="text-sm text-slate-300 space-y-2">
+                        <li><a href="/product/xylene-resistant-spray-paint" className="hover:text-emerald-400 transition-colors">Xylene Resistant Spray Paint</a></li>
+                        <li><a href="/product/super-acrylic-spray-paint" className="hover:text-emerald-400 transition-colors">Super Acrylic Spray Paint</a></li>
+                        <li><a href="/product/acrylic-spray-paint" className="hover:text-emerald-400 transition-colors">Acrylic Spray Paint</a></li>
+                        <li><a href="/product/anti-corrosive-clear-coat" className="hover:text-emerald-400 transition-colors">Anti Corrosive Clear Coat</a></li>
+                        <li><a href="/product/zinc-spray" className="hover:text-emerald-400 transition-colors">Zinc Spray</a></li>
+                    </ul>
+                </div>
 
-                        <a
-                            href="tel:+91958291715"
-                            className="flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/10 transition-colors"
-                        >
-                            <span className="text-emerald-400">📞</span>
-                            <div className="text-sm">
-                                <p className="font-semibold text-white">Main</p>
-                                <p className="text-slate-400">+91 95829 1715</p>
-                            </div>
-                        </a>
-
-                        <a
-                            href="tel:+919220373630"
-                            className="flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/10 transition-colors"
-                        >
-                            <span className="text-emerald-400">📱</span>
-                            <div className="text-sm">
-                                <p className="font-semibold text-white">Sales (Badal Singh)</p>
-                                <p className="text-slate-400">+91 92203 73630</p>
-                            </div>
-                        </a>
-
-                        <a
-                            href="https://wa.me/91958291715"
-                            className="inline-flex items-center justify-center rounded-xl bg-green-500 hover:bg-green-600 text-white font-semibold text-sm py-3 px-4 shadow-sm transition-colors"
-                        >
-                            Chat on WhatsApp
-                        </a>
-                    </div>
+                {/* Why Color-On */}
+                <div className="space-y-4">
+                    <h4 className="text-base font-semibold">Why Color-On?</h4>
+                    <ul className="text-sm text-slate-300 space-y-2">
+                        <li>• Prompt Customer Service</li>
+                        <li>• In-House R&D Manufacturing</li>
+                        <li>• Computerized Color Matching</li>
+                        <li>• Automatic Aerosol Filling Plant</li>
+                    </ul>
                 </div>
             </div>
 
             <div className="border-t border-white/10">
                 <div className="max-w-6xl mx-auto px-6 py-6 text-xs text-slate-500 flex flex-col sm:flex-row gap-2 sm:items-center sm:justify-between">
                     <p>© {new Date().getFullYear()} Can-Coat. All rights reserved.</p>
-                    <p>Made in Haryana, India.</p>
+                    <div className="flex gap-4 items-center">
+                        <a href="privacy-policy" className="hover:text-emerald-400">Privacy</a>
+                        <a href="term-and-condition" className="hover:text-emerald-400">Terms</a>
+                        <a href="term-and-condition" className="hover:text-emerald-400">Conditions</a>
+                    </div>
                 </div>
             </div>
         </motion.footer>

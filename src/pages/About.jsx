@@ -63,10 +63,7 @@ export default function About() {
                     >
                         <h2 className="text-xl font-bold text-slate-900">About us</h2>
                         <p className="mt-3 text-sm md:text-base text-slate-600 leading-relaxed">
-                            Can-Coat manufactures premium aerosol spray paints designed for
-                            smooth finish, strong adhesion, and durable protection. We aim to
-                            deliver reliable coatings for everyday and professional
-                            applications with consistent output.
+                            We manufacture premium aerosol spray paints that provide a smooth finish, strong adhesion, and long-lasting protection. Our products are made for consistent results in both everyday and professional use.
                         </p>
 
                         <div className="mt-6 grid md:grid-cols-3 gap-4">
@@ -101,7 +98,7 @@ export default function About() {
                                 <p className="text-sm font-bold text-emerald-800">Mission</p>
                                 <p className="mt-2 text-sm text-slate-700 leading-relaxed">
                                     Provide high-quality aerosol coatings with dependable color,
-                                    finish, and performance—backed by transparent guidance and
+                                    finish, and performance-backed by transparent guidance and
                                     customer support.
                                 </p>
                             </div>
