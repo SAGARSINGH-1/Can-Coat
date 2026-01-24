@@ -17,7 +17,7 @@ export default function App() {
         <Route path="home" element={<Home />} />  {/* ✅ alias */}
 
         <Route path="about" element={<About />} />
-        <Route path="product" element={<ProductPage />} />
+        <Route path="product/*" element={<ProductPage />} />
         <Route path="contact" element={<Contact />} />
         <Route path="faq" element={<FAQ />} />
         <Route path="term-and-condition" element={<TermsAndConditions />} />  {/* ✅ alias */}
