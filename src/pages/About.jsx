@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { CanCoatLogo } from "../components/AnimatedComponents";
+import Imglogo from "../assets/logo.png";
 
 export default function About() {
     return (
@@ -12,7 +12,12 @@ export default function About() {
                         animate={{ opacity: 1, y: 0 }}
                         className="flex flex-col gap-4"
                     >
-                        <CanCoatLogo className="w-[170px]" />
+                        <img
+                            src={Imglogo}
+                            alt="Can-Coat Premium Spray Paint"
+                            className="h-auto w-24 object-contain mb-[-30px]"
+                            loading="lazy"
+                        />
                         <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900">
                             About Can-Coat
                         </h1>

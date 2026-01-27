@@ -3,7 +3,9 @@ import { useEffect, useState, useRef } from "react";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import productVideo from "../assets/product.mp4";
+import Imglogo from "../assets/logo.png";
 
+// 1. ProductCard - BLUE THEME
 export function ProductCard({ image, title, description }) {
     return (
         <motion.div
@@ -11,14 +13,14 @@ export function ProductCard({ image, title, description }) {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
             whileHover={{ y: -8, rotateX: 2 }}
-            className="group relative rounded-2xl bg-gradient-to-b from-white/90 to-slate-50 shadow-lg hover:shadow-2xl border border-slate-100 hover:border-slate-200/50 p-6 h-full overflow-hidden cursor-pointer"
+            className="group relative rounded-2xl bg-gradient-to-b from-white/90 to-blue-50/50 shadow-lg hover:shadow-2xl border border-slate-100 hover:border-blue-200/50 p-6 h-full overflow-hidden cursor-pointer"
         >
-            {/* Shimmer badge */}
+            {/* Shimmer badge - BLUE */}
             <motion.div
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ delay: 0.2, duration: 0.5 }}
-                className="absolute -top-3 -right-3 w-20 h-10 bg-gradient-to-r from-emerald-500 to-emerald-600 text-white text-xs font-bold flex items-center justify-center rounded-2xl shadow-lg"
+                className="absolute -top-3 -right-3 w-20 h-10 bg-gradient-to-r from-blue-500 to-blue-600 text-white text-xs font-bold flex items-center justify-center rounded-2xl shadow-lg"
             >
                 NEW
             </motion.div>
@@ -53,22 +55,22 @@ export function ProductCard({ image, title, description }) {
                 </p>
             </motion.div>
 
-            {/* Glow button */}
+            {/* Glow button - BLUE */}
             <motion.button
-                whileHover={{ scale: 1.02, boxShadow: "0 10px 25px rgba(16,185,129,0.3)" }}
+                whileHover={{ scale: 1.02, boxShadow: "0 10px 25px rgba(30,64,175,0.3)" }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full relative bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white py-3 px-5 rounded-xl font-semibold text-sm shadow-lg overflow-hidden group/button"
+                className="w-full relative bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white py-3 px-5 rounded-xl font-semibold text-sm shadow-lg overflow-hidden group/button"
             >
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 transform -translate-x-[120%] group-hover/button:translate-x-[120%] transition-transform duration-1000" />
                 <span className="relative z-10">View Details →</span>
             </motion.button>
 
-            {/* Subtle glow ring */}
+            {/* Subtle glow ring - BLUE */}
             <motion.div
                 animate={{
                     boxShadow: [
-                        "0 0 0 0 rgba(16,185,129,0.4)",
-                        "0 0 0 20px rgba(16,185,129,0)",
+                        "0 0 0 0 rgba(30,64,175,0.4)",
+                        "0 0 0 20px rgba(30,64,175,0)",
                     ]
                 }}
                 transition={{
@@ -82,12 +84,12 @@ export function ProductCard({ image, title, description }) {
     );
 }
 
-// 2. Hero Banner - WITH CAN-COAT LOGO + CURSOR POINTERS
+// 2. HeroBanner - BLUE THEME
 export function HeroBanner({ title, subtitle, ctaText, image }) {
     const navigate = useNavigate();
 
     return (
-        <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 to-slate-950 py-20">
+        <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-blue-950 py-20">
             <div className="max-w-5xl mx-auto px-6 grid md:grid-cols-2 items-center gap-12">
                 <motion.div
                     initial={{ opacity: 0, x: -40 }}
@@ -99,7 +101,7 @@ export function HeroBanner({ title, subtitle, ctaText, image }) {
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ delay: 0.2 }}
-                        className="inline-block bg-emerald-500/20 text-emerald-400 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider"
+                        className="inline-block bg-blue-500/20 text-blue-400 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider"
                     >
                         Professional Spray Solutions
                     </motion.span>
@@ -124,7 +126,7 @@ export function HeroBanner({ title, subtitle, ctaText, image }) {
                             whileHover={{ scale: 1.03 }}
                             whileTap={{ scale: 0.98 }}
                             onClick={() => { navigate("/product") }}
-                            className="cursor-pointer bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-3.5 rounded-xl font-semibold text-base shadow-xl hover:shadow-emerald-500/30 transition-all duration-300"
+                            className="cursor-pointer bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white px-8 py-3.5 rounded-xl font-semibold text-base shadow-xl hover:shadow-blue-500/30 transition-all duration-300"
                         >
                             {ctaText}
                         </motion.button>
@@ -155,7 +157,7 @@ export function HeroBanner({ title, subtitle, ctaText, image }) {
     );
 }
 
-// 3. Category Filter Button
+// 3. CategoryFilter - BLUE THEME
 export function CategoryFilter({ active, label, onClick }) {
     return (
         <motion.button
@@ -163,7 +165,7 @@ export function CategoryFilter({ active, label, onClick }) {
             whileTap={{ scale: 0.98 }}
             animate={{ scale: active ? 1.05 : 1 }}
             className={`cursor-pointer px-5 py-2.5 rounded-full font-medium text-sm transition-all duration-300 ${active
-                ? "bg-emerald-500 text-white shadow-md shadow-emerald-400/30"
+                ? "bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-md shadow-blue-400/30"
                 : "bg-white/70 text-slate-700 hover:bg-white shadow-sm hover:shadow-md"
                 }`}
             onClick={onClick}
@@ -173,12 +175,12 @@ export function CategoryFilter({ active, label, onClick }) {
     );
 }
 
-// 4. FAQ Section - WITH CURSOR POINTERS
+// 4. FAQSection - BLUE THEME
 export function FAQSection() {
     let navigate = useNavigate();
 
     return (
-        <section className="py-20 bg-gradient-to-r from-slate-50 to-slate-100">
+        <section className="py-20 bg-gradient-to-r from-slate-50 via-blue-50/50 to-blue-100/30">
             <div className="max-w-5xl mx-auto px-6">
                 <motion.div
                     initial={{ opacity: 0, y: 40 }}
@@ -186,7 +188,7 @@ export function FAQSection() {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                    <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-900 to-blue-600 bg-clip-text text-transparent mb-4">
                         Have a Quick Look
                     </h2>
                     <p className="text-xl text-slate-600 max-w-2xl mx-auto">
@@ -195,7 +197,7 @@ export function FAQSection() {
                 </motion.div>
 
                 <div className="grid lg:grid-cols-2 gap-8 items-center">
-                    {/* Left - FIXED VIDEO PLAYER (Infinite Auto-Play) */}
+                    {/* Left - FIXED VIDEO PLAYER */}
                     <motion.div
                         initial={{ opacity: 0, scale: 0.95 }}
                         whileInView={{ opacity: 1, scale: 1 }}
@@ -204,7 +206,6 @@ export function FAQSection() {
                         className="relative group cursor-pointer"
                     >
                         <div className="aspect-video bg-gradient-to-br rounded-3xl shadow-2xl overflow-hidden">
-                            {/* ✅ FIXED VIDEO - AUTO infinite LOOP */}
                             <video
                                 src={productVideo}
                                 autoPlay
@@ -215,7 +216,6 @@ export function FAQSection() {
                                 className="w-full h-full object-cover"
                                 poster="https://th.bing.com/th/id/OIP.jKNZoEoh-dK0-44ZBWTHlAHaHa?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3"
                             />
-                            {/* Subtle overlay for play button feel */}
                             <div className="absolute inset-0 bg-black/10 backdrop-blur-sm flex items-center justify-center opacity-0 transition-all duration-300">
                                 <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center group-hover:bg-white/30 transition-all duration-300">
                                     <svg className="w-10 h-10 ml-1 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -224,30 +224,30 @@ export function FAQSection() {
                                 </div>
                             </div>
                         </div>
-                        {/* ORIGINAL Label */}
-                        <div className="absolute bottom-6 left-6 bg-white p-4 rounded-lg shadow-md border-l-4 border-emerald-400">
-                            <span className="font-semibold text-emerald-800 text-base">Watch Video</span>
+                        {/* Label - BLUE */}
+                        <div className="absolute bottom-6 left-6 bg-white p-4 rounded-lg shadow-md border-l-4 border-blue-400">
+                            <span className="font-semibold text-blue-800 text-base">Watch Video</span>
                         </div>
-                        {/* ORIGINAL Decoration */}
-                        <div className="absolute -top-12 -right-12 bg-red-500 text-white px-3 py-1 rounded-br-lg font-bold text-xs shadow-lg rotate-[-15deg]">
+                        {/* Decoration - BLUE */}
+                        <div className="absolute -top-12 -right-12 bg-blue-500 text-white px-3 py-1 rounded-br-lg font-bold text-xs shadow-lg rotate-[-15deg]">
                             PLAY
                         </div>
                     </motion.div>
 
-                    {/* Right - ORIGINAL FAQ DESIGN (Same fonts/sizes) */}
+                    {/* Right - FAQ DESIGN - BLUE THEME */}
                     <motion.div
                         initial={{ opacity: 0, x: 40 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.6, delay: 0.2 }}
                         className="space-y-4"
                     >
-                        {/* ORIGINAL Q1 */}
-                        <div className="flex items-start gap-3 p-5 bg-white/70 backdrop-blur-sm rounded-2xl shadow-md border-l-4 border-red-400 hover:shadow-lg transition-all duration-300 cursor-pointer">
-                            <div className="w-8 h-8 bg-gradient-to-r from-red-500 to-orange-500 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                        {/* Q1 - Blue accent */}
+                        <div className="flex items-start gap-3 p-5 bg-white/80 backdrop-blur-sm rounded-2xl shadow-md border-l-4 border-blue-400 hover:shadow-lg transition-all duration-300 cursor-pointer">
+                            <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
                                 <span className="text-white font-semibold text-xs">Q</span>
                             </div>
                             <div className="flex-1">
-                                <p className="font-semibold text-orange-900 text-base mb-1">
+                                <p className="font-semibold text-blue-900 text-base mb-1">
                                     Can I do it myself?
                                 </p>
                                 <p className="text-xs text-slate-700 mt-1">
@@ -256,13 +256,13 @@ export function FAQSection() {
                             </div>
                         </div>
 
-                        {/* ORIGINAL Q2 */}
-                        <div className="flex items-start gap-3 p-5 bg-white/70 backdrop-blur-sm rounded-2xl shadow-md border-l-4 border-emerald-400 hover:shadow-lg transition-all duration-300 cursor-pointer">
-                            <div className="w-8 h-8 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                        {/* Q2 - Blue accent */}
+                        <div className="flex items-start gap-3 p-5 bg-white/80 backdrop-blur-sm rounded-2xl shadow-md border-l-4 border-blue-500 hover:shadow-lg transition-all duration-300 cursor-pointer">
+                            <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
                                 <span className="text-white font-semibold text-xs">Q</span>
                             </div>
                             <div className="flex-1">
-                                <p className="font-semibold text-emerald-800 text-base mb-1">
+                                <p className="font-semibold text-blue-900 text-base mb-1">
                                     Will the color match?
                                 </p>
                                 <p className="text-xs text-slate-700 mt-1">
@@ -271,18 +271,18 @@ export function FAQSection() {
                             </div>
                         </div>
 
-                        {/* ORIGINAL CTA Buttons */}
+                        {/* CTA Buttons - BLUE + WhatsApp */}
                         <div className="flex items-center gap-3 pt-2">
                             <motion.button
                                 onClick={() => navigate("/faq")}
                                 whileHover={{ scale: 1.03 }}
-                                className="bg-emerald-500 hover:bg-emerald-600 text-white px-6 py-3 rounded-lg font-semibold text-sm shadow-lg hover:shadow-emerald-500/30 transition-all cursor-pointer"
+                                className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white px-6 py-3 rounded-lg font-semibold text-sm shadow-lg hover:shadow-blue-500/30 transition-all cursor-pointer"
                             >
                                 See FAQs
                             </motion.button>
                             <a
                                 href="https://wa.me/91958291715"
-                                className="bg-green-500 hover:bg-green-600 text-white p-3 rounded-lg shadow-lg hover:shadow-green-500/30 transition-all cursor-pointer"
+                                className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white p-3 rounded-lg shadow-lg hover:shadow-blue-500/30 transition-all cursor-pointer"
                             >
                                 💬 WhatsApp
                             </a>
@@ -294,47 +294,29 @@ export function FAQSection() {
     );
 }
 
-// Can-Coat Logo Component
-export function CanCoatLogo({ className = "w-24" }) {
-    return (
-        <div className={`flex flex-col ${className}`}>
-            <span className="font-['Playfair_Display'] italic font-black text-[20px] leading-none tracking-[-0.02em] bg-gradient-to-r from-[#1e40af] to-[#1d4ed8] bg-clip-text text-transparent">
-                Can-Coat
-            </span>
-            <span className="text-[10px] font-black uppercase tracking-[0.15em] text-slate-800 inline-block w-full whitespace-nowrap -mt-[1px]">
-                PREMIUM SPRAY PAINT
-            </span>
-        </div>
-    );
-}
-
-
+// TestimonialsSection.jsx - Blue Theme
 export function TestimonialsSection() {
     const testimonials = [
         {
-            text:
-                "Can-Coat has truly earned my trust with its excellent quality at an affordable price. It saved my both time and money, and the finish after touch-ups is outstanding. It’s a fantastic product that I’ll happily keep coming back to.",
+            text: "Can-Coat has truly earned my trust with its excellent quality at an affordable price. It saved my both time and money, and the finish after touch-ups is outstanding. It’s a fantastic product that I’ll happily keep coming back to.",
             name: "Rishab Jain",
             city: "Jaipur",
             rating: 5,
         },
         {
-            text:
-                "The color matching was accurate, and the finish looked professional. The instructions were clear, and the application felt easy—even for a first-timer.",
+            text: "The color matching was accurate, and the finish looked professional. The instructions were clear, and the application felt easy—even for a first-timer.",
             name: "Tinu Pal",
             city: "Manesar",
             rating: 5,
         },
         {
-            text:
-                "Great coverage and quick drying. The overall kit quality is solid and the final result blended well with the original paint.",
+            text: "Great coverage and quick drying. The overall kit quality is solid and the final result blended well with the original paint.",
             name: "Manoj Sharma",
             city: "Gurgaon",
             rating: 5,
         },
         {
-            text:
-                "Great coverage and quick drying. The overall kit quality is solid and the final result blended well with the original paint.",
+            text: "Great coverage and quick drying. The overall kit quality is solid and the final result blended well with the original paint.",
             name: "Sanjay",
             city: "Gurgaon",
             rating: 4,
@@ -355,9 +337,9 @@ export function TestimonialsSection() {
 
     return (
         <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 py-16 md:py-20">
-            {/* soft glow blobs */}
-            <div className="pointer-events-none absolute -top-24 -left-24 h-72 w-72 rounded-full bg-emerald-500/15 blur-3xl" />
-            <div className="pointer-events-none absolute -bottom-24 -right-24 h-72 w-72 rounded-full bg-cyan-500/10 blur-3xl" />
+            {/* soft glow blobs (blue version) */}
+            <div className="pointer-events-none absolute -top-24 -left-24 h-72 w-72 rounded-full bg-blue-500/15 blur-3xl" />
+            <div className="pointer-events-none absolute -bottom-24 -right-24 h-72 w-72 rounded-full bg-blue-300/10 blur-3xl" />
 
             <div className="max-w-6xl mx-auto px-6 relative">
                 {/* Headings */}
@@ -367,15 +349,14 @@ export function TestimonialsSection() {
                     transition={{ duration: 0.5 }}
                     className="text-center text-white"
                 >
-                    <p className="text-[11px] tracking-[0.35em] uppercase text-emerald-300/90">
+                    <p className="text-[11px] tracking-[0.35em] uppercase text-blue-300/90">
                         Client’s Testimonials
                     </p>
-                    <h2 className="mt-3 text-3xl md:text-5xl font-extrabold">
+                    <h2 className="mt-3 text-3xl md:text-5xl font-extrabold text-transparent bg-gradient-to-r from-blue-300 via-blue-200 to-blue-100 bg-clip-text">
                         What They Are Saying
                     </h2>
                     <p className="mt-5 max-w-4xl mx-auto text-sm md:text-base text-slate-200/90 leading-relaxed">
-                        We focus on consistent finish, dependable performance, and clear
-                        application guidance. Here’s what customers say after using Can-Coat.
+                        We focus on consistent finish, dependable performance, and clear application guidance. Here’s what customers say after using Can-Coat.
                     </p>
                 </motion.div>
 
@@ -391,8 +372,8 @@ export function TestimonialsSection() {
                                 transition={{ duration: 0.45 }}
                                 className="relative rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl shadow-2xl p-7 md:p-10"
                             >
-                                {/* top accent line */}
-                                <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-emerald-400/60 via-cyan-400/20 to-transparent rounded-t-3xl" />
+                                {/* top accent line (blue) */}
+                                <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-blue-400/60 via-blue-500/20 to-transparent rounded-t-3xl" />
 
                                 <p className="text-slate-100/90 italic text-sm md:text-base leading-relaxed">
                                     “{current.text}”
@@ -402,7 +383,7 @@ export function TestimonialsSection() {
                                     <div>
                                         <div className="flex gap-1">
                                             {Array.from({ length: current.rating }).map((_, i) => (
-                                                <span key={i} className="text-emerald-400 text-base">
+                                                <span key={i} className="text-blue-400 text-base">
                                                     ★
                                                 </span>
                                             ))}
@@ -425,8 +406,7 @@ export function TestimonialsSection() {
                                             <button
                                                 key={i}
                                                 onClick={() => setIndex(i)}
-                                                className={`h-2.5 w-2.5 rounded-full transition-all cursor-pointer ${i === index ? "bg-emerald-400" : "bg-white/25"
-                                                    }`}
+                                                className={`h-2.5 w-2.5 rounded-full transition-all cursor-pointer ${i === index ? "bg-blue-400" : "bg-white/25"}`}
                                                 aria-label={`Go to testimonial ${i + 1}`}
                                             />
                                         ))}
@@ -441,14 +421,11 @@ export function TestimonialsSection() {
     );
 }
 
-
-
+// StatsCounter.jsx - Blue Theme
 export function StatsCounter() {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-
-    // Stats data from your image[file:29]
     const stats = [
         { number: 2000, suffix: "+", label: "Color Shades" },
         { number: 150, suffix: "+", label: "Happy Customers" },
@@ -489,7 +466,7 @@ export function StatsCounter() {
                 transition={{ duration: 0.8, delay: 0.3 }}
             >
                 {count.toLocaleString()}
-                <span className="text-xl md:text-2xl lg:text-3xl font-bold text-red-500 ml-1">
+                <span className="text-xl md:text-2xl lg:text-3xl font-bold text-blue-600 ml-1">
                     {suffix}
                 </span>
             </motion.span>
@@ -497,7 +474,7 @@ export function StatsCounter() {
     };
 
     return (
-        <section className="py-20 bg-gradient-to-br from-slate-50 via-white to-emerald-50/20">
+        <section className="py-20 bg-gradient-to-br from-slate-50 via-blue-50/50 to-blue-100/30">
             <div ref={ref} className="max-w-6xl mx-auto px-6">
                 <motion.div
                     initial="hidden"
@@ -533,12 +510,11 @@ export function StatsCounter() {
                             whileHover={{
                                 scale: 1.05,
                                 y: -8,
-                                boxShadow: "0 25px 50px rgba(0,0,0,0.15)"
+                                boxShadow: "0 25px 50px rgba(30,64,175,0.15)"
                             }}
-                            className="group relative p-8 md:p-10 rounded-3xl bg-white/80 backdrop-blur-xl shadow-xl hover:shadow-2xl hover:shadow-red-500/10 border border-white/50 hover:border-red-200/50 transition-all duration-500 cursor-pointer overflow-hidden"
+                            className="group relative p-8 md:p-10 rounded-3xl bg-white/80 backdrop-blur-xl shadow-xl hover:shadow-2xl hover:shadow-blue-500/10 border border-white/50 hover:border-blue-200/50 transition-all duration-500 cursor-pointer overflow-hidden"
                         >
-
-                            {/* Counter - Only animates when in view */}
+                            {/* Counter */}
                             <CountUp
                                 finalNumber={stat.number}
                                 suffix={stat.suffix}
@@ -556,9 +532,9 @@ export function StatsCounter() {
                                 {stat.label}
                             </motion.p>
 
-                            {/* Glow effect */}
+                            {/* Glow effect (blue) */}
                             <motion.div
-                                className="absolute inset-0 rounded-3xl bg-gradient-to-r from-red-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"
+                                className="absolute inset-0 rounded-3xl bg-gradient-to-r from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"
                                 initial={{ scale: 1 }}
                                 animate={{
                                     scale: [1, 1.05, 1],

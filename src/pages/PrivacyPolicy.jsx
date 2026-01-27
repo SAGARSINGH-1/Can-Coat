@@ -3,16 +3,16 @@ import { motion } from 'framer-motion';
 
 const PrivacyPolicy = () => {
     return (
-        <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-emerald-50 py-16 px-4">
+        <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/80 to-blue-100/50 py-16 px-4">
             <div className="max-w-4xl mx-auto">
-                {/* Header */}
+                {/* Header - Logo Blue Gradient */}
                 <motion.div
                     initial={{ opacity: 0, y: -30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
                     className="text-center mb-16"
                 >
-                    <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-900 via-blue-800 to-emerald-700 bg-clip-text text-transparent mb-4 tracking-tight">
+                    <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-900 via-blue-800 to-blue-600 bg-clip-text text-transparent mb-4 tracking-tight">
                         Privacy Policy
                     </h1>
                     <p className="text-xl text-slate-600 max-w-2xl mx-auto">
@@ -23,19 +23,19 @@ const PrivacyPolicy = () => {
 
                 {/* Main Content */}
                 <div className="space-y-8">
-                    {/* 1. Introduction */}
+                    {/* 1. Introduction - Blue accent */}
                     <motion.section
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.5, delay: 0.1 }}
-                        className="bg-white/70 backdrop-blur-sm rounded-2xl border border-slate-200/50 p-8 shadow-lg"
+                        className="bg-white/70 backdrop-blur-sm rounded-2xl border-l-4 border-blue-500 p-8 shadow-lg"
                     >
                         <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
-                            <span className="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center text-emerald-600 font-semibold text-sm">1</span>
+                            <span className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 font-semibold text-sm">1</span>
                             Introduction
                         </h2>
                         <p className="text-slate-700 leading-relaxed text-lg mb-4">
-                            Can-Coat Premium Spray Paint ("we", "us", "our") is committed to protecting your privacy. This Privacy Policy
+                            Can-Coat Premium Spray Paint is committed to protecting your privacy. This Privacy Policy
                             explains how we collect, use, and protect information when you visit our website, contact us for industrial
                             spray paint inquiries, or place orders for our OEM-grade color matching services.
                         </p>
@@ -44,15 +44,15 @@ const PrivacyPolicy = () => {
                         </p>
                     </motion.section>
 
-                    {/* 2. Information We Collect */}
+                    {/* 2. Information We Collect - Blue gradient */}
                     <motion.section
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.5, delay: 0.2 }}
-                        className="bg-gradient-to-r from-emerald-50/50 to-blue-50/50 backdrop-blur-sm rounded-2xl border-l-4 border-emerald-500 p-8 shadow-md"
+                        className="bg-gradient-to-r from-blue-50/70 to-blue-100/50 backdrop-blur-sm rounded-2xl border-l-4 border-blue-500 p-8 shadow-md"
                     >
                         <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
-                            <span className="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center text-emerald-600 font-semibold text-sm">2</span>
+                            <span className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 font-semibold text-sm">2</span>
                             Information We Collect
                         </h2>
                         <div className="grid md:grid-cols-2 gap-8 text-sm">
@@ -81,19 +81,19 @@ const PrivacyPolicy = () => {
                                 <h3 className="font-semibold text-slate-800 mb-4 text-lg">Website Usage</h3>
                                 <ul className="space-y-3 text-slate-700">
                                     <li className="flex items-start gap-3">
-                                        <span className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></span>
+                                        <span className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
                                         IP address, browser type, device info
                                     </li>
                                     <li className="flex items-start gap-3">
-                                        <span className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></span>
+                                        <span className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
                                         Pages visited (product specs, safety data)
                                     </li>
                                     <li className="flex items-start gap-3">
-                                        <span className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></span>
+                                        <span className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
                                         Session duration, referral sources
                                     </li>
                                     <li className="flex items-start gap-3">
-                                        <span className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></span>
+                                        <span className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
                                         No cookies or tracking for advertising
                                     </li>
                                 </ul>
@@ -101,12 +101,12 @@ const PrivacyPolicy = () => {
                         </div>
                     </motion.section>
 
-                    {/* 3. How We Use Your Information */}
+                    {/* 3. How We Use Information - Blue accent */}
                     <motion.section
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.5, delay: 0.3 }}
-                        className="bg-white/70 backdrop-blur-sm rounded-2xl border border-slate-200/50 p-8 shadow-lg"
+                        className="bg-white/70 backdrop-blur-sm rounded-2xl border-l-4 border-blue-500 p-8 shadow-lg"
                     >
                         <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
                             <span className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 font-semibold text-sm">3</span>
@@ -134,20 +134,20 @@ const PrivacyPolicy = () => {
                         </div>
                     </motion.section>
 
-                    {/* 4. Data Sharing & Security */}
+                    {/* 4. Data Sharing & Security - Blue theme */}
                     <motion.section
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.5, delay: 0.4 }}
-                        className="bg-gradient-to-r from-slate-50 to-blue-50/30 rounded-2xl border border-slate-200/30 p-8 shadow-md"
+                        className="bg-gradient-to-r from-blue-50/80 to-blue-100/50 rounded-2xl border-l-4 border-blue-400 p-8 shadow-md"
                     >
                         <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
-                            <span className="w-8 h-8 bg-slate-100 rounded-lg flex items-center justify-center text-slate-600 font-semibold text-sm">4</span>
+                            <span className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 font-semibold text-sm">4</span>
                             Data Sharing & Security
                         </h2>
                         <div className="space-y-4 text-slate-700 leading-relaxed">
-                            <div className="bg-emerald-50 border-l-4 border-emerald-400 p-5 rounded-r-xl">
-                                <h4 className="font-semibold text-emerald-900 mb-2">✅ We NEVER sell your data</h4>
+                            <div className="bg-blue-50 border-l-4 border-blue-400 p-5 rounded-r-xl">
+                                <h4 className="font-semibold text-blue-900 mb-2">✅ We NEVER sell your data</h4>
                                 <p className="text-sm">Your industrial client information stays confidential.</p>
                             </div>
                             <div className="grid md:grid-cols-2 gap-4 text-sm">
@@ -172,15 +172,15 @@ const PrivacyPolicy = () => {
                         </div>
                     </motion.section>
 
-                    {/* 5. Your Rights */}
+                    {/* 5. Your Rights - Blue theme */}
                     <motion.section
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.5, delay: 0.5 }}
-                        className="bg-gradient-to-r from-purple-50/70 to-blue-50/50 rounded-2xl border border-purple-200 p-8 shadow-lg"
+                        className="bg-gradient-to-r from-blue-50/70 to-blue-100/50 rounded-2xl border-l-4 border-blue-500 p-8 shadow-lg"
                     >
                         <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
-                            <span className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center text-purple-600 font-semibold text-sm">5</span>
+                            <span className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 font-semibold text-sm">5</span>
                             Your Rights
                         </h2>
                         <div className="grid md:grid-cols-2 gap-6 text-sm">
@@ -195,23 +195,23 @@ const PrivacyPolicy = () => {
                             </div>
                             <div>
                                 <h4 className="font-semibold text-slate-800 mb-3">Contact Us</h4>
-                                <div className="bg-purple-50 p-4 rounded-xl border border-purple-200">
-                                    <p className="font-semibold text-purple-900 mb-1">Email: privacy@can-coat.com</p>
+                                <div className="bg-blue-50 p-4 rounded-xl border border-blue-200">
+                                    <p className="font-semibold text-blue-900 mb-1">Email: privacy@can-coat.com</p>
                                     <p className="text-sm text-slate-700">Response within 48 hours for all data requests</p>
                                 </div>
                             </div>
                         </div>
                     </motion.section>
 
-                    {/* 6. Legal */}
+                    {/* 6. Legal - Blue theme */}
                     <motion.section
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.5, delay: 0.6 }}
-                        className="bg-gradient-to-r from-slate-900/5 to-slate-800/5 backdrop-blur-sm rounded-2xl border border-slate-200/20 p-8 shadow-xl"
+                        className="bg-gradient-to-r from-blue-50/50 to-blue-100/30 backdrop-blur-sm rounded-2xl border-l-4 border-blue-400 p-8 shadow-xl"
                     >
                         <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
-                            <span className="w-8 h-8 bg-slate-100 rounded-lg flex items-center justify-center text-slate-600 font-semibold text-sm">6</span>
+                            <span className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 font-semibold text-sm">6</span>
                             Governing Law
                         </h2>
                         <div className="text-sm space-y-3">
@@ -225,20 +225,20 @@ const PrivacyPolicy = () => {
                     </motion.section>
                 </div>
 
-                {/* Footer CTA */}
+                {/* Footer CTA - Blue theme */}
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.8, duration: 0.5 }}
-                    className="text-center mt-20 p-8 bg-emerald-600/90 backdrop-blur-sm rounded-2xl text-white"
+                    className="text-center mt-20 p-8 bg-gradient-to-r from-blue-600 to-blue-700 backdrop-blur-sm rounded-2xl text-white shadow-2xl"
                 >
                     <h3 className="text-2xl font-bold mb-4">Questions About Privacy?</h3>
-                    <p className="text-emerald-100 mb-6">Contact our team for any data protection concerns</p>
+                    <p className="text-blue-100 mb-6">Contact our team for any data protection concerns</p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                        <a href="mailto:privacy@can-coat.com" className="px-8 py-3 bg-white text-emerald-700 font-semibold rounded-xl hover:bg-emerald-50 transition-all duration-200 shadow-lg">
+                        <a href="mailto:privacy@can-coat.com" className="px-8 py-3 bg-white text-blue-700 font-semibold rounded-xl hover:bg-blue-50 transition-all duration-200 shadow-lg">
                             privacy@can-coat.com
                         </a>
-                        <a href="/contact" className="px-8 py-3 border-2 border-white text-white font-semibold rounded-xl hover:bg-white hover:text-emerald-700 transition-all duration-200">
+                        <a href="/contact" className="px-8 py-3 border-2 border-white text-white font-semibold rounded-xl hover:bg-white hover:text-blue-700 transition-all duration-200">
                             Contact Us
                         </a>
                     </div>

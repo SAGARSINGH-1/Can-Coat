@@ -3,16 +3,16 @@ import { motion } from 'framer-motion';
 
 const TermsAndConditions = () => {
     return (
-        <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-emerald-50 py-16 px-4">
+        <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/80 to-blue-100/50 py-16 px-4">
             <div className="max-w-4xl mx-auto">
-                {/* Header */}
+                {/* Header - Logo Blue Gradient */}
                 <motion.div
                     initial={{ opacity: 0, y: -30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
                     className="text-center mb-16"
                 >
-                    <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-900 via-blue-800 to-emerald-700 bg-clip-text text-transparent mb-4 tracking-tight">
+                    <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-900 via-blue-800 to-blue-600 bg-clip-text text-transparent mb-4 tracking-tight">
                         Terms & Conditions
                     </h1>
                     <p className="text-xl text-slate-600 max-w-2xl mx-auto">
@@ -22,32 +22,32 @@ const TermsAndConditions = () => {
 
                 {/* Main Content */}
                 <div className="space-y-8">
-                    {/* 1. Introduction */}
+                    {/* 1. Introduction - Blue accent */}
                     <motion.section
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.5, delay: 0.1 }}
-                        className="bg-white/70 backdrop-blur-sm rounded-2xl border border-slate-200/50 p-8 shadow-lg"
+                        className="bg-white/70 backdrop-blur-sm rounded-2xl border-l-4 border-blue-500 p-8 shadow-lg"
                     >
                         <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
-                            <span className="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center text-emerald-600 font-semibold text-sm">1</span>
+                            <span className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 font-semibold text-sm">1</span>
                             Introduction
                         </h2>
                         <p className="text-slate-700 leading-relaxed text-lg">
                             These Terms and Conditions govern the purchase, use, and handling of Can-Coat Premium Spray Paint products
-                            manufactured by our facility for industrial touch-up applications on powder-coated and pre-painted metal surfaces.
+                            manufactured by our facility for industrial touch-up applications on painted & powder-coated surfaces.
                         </p>
                     </motion.section>
 
-                    {/* 2. Product Usage */}
+                    {/* 2. Product Usage - Blue gradient */}
                     <motion.section
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.5, delay: 0.2 }}
-                        className="bg-gradient-to-r from-emerald-50/50 to-blue-50/50 backdrop-blur-sm rounded-2xl border-l-4 border-emerald-500 p-8 shadow-md"
+                        className="bg-gradient-to-r from-blue-50/70 to-blue-100/50 backdrop-blur-sm rounded-2xl border-l-4 border-blue-500 p-8 shadow-md"
                     >
                         <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
-                            <span className="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center text-emerald-600 font-semibold text-sm">2</span>
+                            <span className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 font-semibold text-sm">2</span>
                             Product Usage & Application
                         </h2>
                         <div className="grid md:grid-cols-2 gap-6 text-sm">
@@ -72,24 +72,24 @@ const TermsAndConditions = () => {
                         </div>
                     </motion.section>
 
-                    {/* 3. Safety Precautions */}
+                    {/* 3. Safety Precautions - Blue safety theme */}
                     <motion.section
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.5, delay: 0.3 }}
-                        className="bg-gradient-to-r from-orange-50/70 to-red-50/50 rounded-2xl border border-orange-200 p-8 shadow-lg relative overflow-hidden"
+                        className="bg-gradient-to-r from-blue-50/70 to-blue-100/50 rounded-2xl border-l-4 border-blue-400 p-8 shadow-lg relative overflow-hidden"
                     >
-                        <div className="absolute top-4 right-4 w-24 h-24 bg-orange-100 rounded-full opacity-20"></div>
+                        <div className="absolute top-4 right-4 w-24 h-24 bg-blue-100 rounded-full opacity-20"></div>
                         <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
-                            <span className="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center text-orange-600 font-semibold text-sm">3</span>
+                            <span className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 font-semibold text-sm">3</span>
                             Safety & Handling
                         </h2>
                         <div className="grid md:grid-cols-2 gap-6">
                             <div className="space-y-4">
-                                <div className="bg-orange-50 p-4 rounded-xl border-l-4 border-orange-400">
-                                    <h4 className="font-semibold text-orange-900 mb-2">⚠️ DANGER - Highly Flammable</h4>
-                                    <ul className="text-sm text-orange-900 space-y-1">
-                                        <li>• Keep away from heat, flame, sparks</li>
+                                <div className="bg-blue-50 p-4 rounded-xl border-l-4 border-blue-400">
+                                    <h4 className="font-semibold text-blue-900 mb-2">⚠️ DANGER - Highly Flammable</h4>
+                                    <ul className="text-sm text-blue-900 space-y-1">
+                                        <li>• Keep away from direct heat, flame, sparks</li>
                                         <li>• Use only in well-ventilated areas</li>
                                         <li>• Do not puncture or burn, even when empty</li>
                                     </ul>
@@ -108,12 +108,12 @@ const TermsAndConditions = () => {
                         </div>
                     </motion.section>
 
-                    {/* 4. Warranty & Liability */}
+                    {/* 4. Warranty & Liability - Blue accent */}
                     <motion.section
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.5, delay: 0.4 }}
-                        className="bg-white/70 backdrop-blur-sm rounded-2xl border border-slate-200/50 p-8 shadow-lg"
+                        className="bg-white/70 backdrop-blur-sm rounded-2xl border-l-4 border-blue-500 p-8 shadow-lg"
                     >
                         <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
                             <span className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 font-semibold text-sm">4</span>
@@ -128,43 +128,43 @@ const TermsAndConditions = () => {
                         </div>
                     </motion.section>
 
-                    {/* 5. Chemical Composition */}
+                    {/* 5. Chemical Composition - Blue theme */}
                     <motion.section
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.5, delay: 0.5 }}
-                        className="bg-gradient-to-r from-slate-50 to-blue-50/30 rounded-2xl border border-slate-200/30 p-8"
+                        className="bg-gradient-to-r from-blue-50/50 to-blue-100/30 rounded-2xl border-l-4 border-blue-400 p-8"
                     >
                         <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
-                            <span className="w-8 h-8 bg-slate-100 rounded-lg flex items-center justify-center text-slate-600 font-semibold text-sm">5</span>
+                            <span className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 font-semibold text-sm">5</span>
                             Chemical Composition Disclosure
                         </h2>
                         <div className="grid md:grid-cols-3 gap-6 text-sm">
-                            <div className="bg-slate-50 p-4 rounded-xl">
-                                <h4 className="font-semibold text-slate-800 mb-2">Resins/Binders</h4>
+                            <div className="bg-blue-50 p-4 rounded-xl border border-blue-200">
+                                <h4 className="font-semibold text-blue-800 mb-2">Resins/Binders</h4>
                                 <p>Acrylic Resin, Modified Alkyd Resin</p>
                             </div>
-                            <div className="bg-slate-50 p-4 rounded-xl">
-                                <h4 className="font-semibold text-slate-800 mb-2">Solvents</h4>
+                            <div className="bg-blue-50 p-4 rounded-xl border border-blue-200">
+                                <h4 className="font-semibold text-blue-800 mb-2">Solvents</h4>
                                 <p>Acetone, Toluene, Xylene</p>
                             </div>
-                            <div className="bg-slate-50 p-4 rounded-xl">
-                                <h4 className="font-semibold text-slate-800 mb-2">Propellants</h4>
+                            <div className="bg-blue-50 p-4 rounded-xl border border-blue-200">
+                                <h4 className="font-semibold text-blue-800 mb-2">Propellants</h4>
                                 <p>LPG, Dimethyl Ether (DME)</p>
                             </div>
                         </div>
                         <p className="text-xs text-slate-500 mt-4 text-center">Contains anti-rust additives, UV stabilizers, flow agents</p>
                     </motion.section>
 
-                    {/* 6. Legal */}
+                    {/* 6. Legal - Blue theme */}
                     <motion.section
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.5, delay: 0.6 }}
-                        className="bg-gradient-to-r from-slate-900/5 to-slate-800/5 backdrop-blur-sm rounded-2xl border border-slate-200/20 p-8 shadow-xl"
+                        className="bg-gradient-to-r from-blue-50/50 to-blue-100/30 backdrop-blur-sm rounded-2xl border-l-4 border-blue-400 p-8 shadow-xl"
                     >
                         <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
-                            <span className="w-8 h-8 bg-slate-100 rounded-lg flex items-center justify-center text-slate-600 font-semibold text-sm">6</span>
+                            <span className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 font-semibold text-sm">6</span>
                             Governing Law
                         </h2>
                         <div className="text-sm space-y-3">
@@ -178,20 +178,20 @@ const TermsAndConditions = () => {
                     </motion.section>
                 </div>
 
-                {/* Footer CTA */}
+                {/* Footer CTA - Blue theme */}
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.8, duration: 0.5 }}
-                    className="text-center mt-20 p-8 bg-emerald-600/90 backdrop-blur-sm rounded-2xl text-white"
+                    className="text-center mt-20 p-8 bg-gradient-to-r from-blue-600 to-blue-700 backdrop-blur-sm rounded-2xl text-white shadow-2xl"
                 >
                     <h3 className="text-2xl font-bold mb-4">Ready to Order?</h3>
-                    <p className="text-emerald-100 mb-6">Contact our sales team for bulk industrial orders & custom shade matching</p>
+                    <p className="text-blue-100 mb-6">Contact our sales team for bulk industrial orders & custom shade matching</p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                        <a href="/contact" className="px-8 py-3 bg-white text-emerald-700 font-semibold rounded-xl hover:bg-emerald-50 transition-all duration-200 shadow-lg">
+                        <a href="/contact" className="px-8 py-3 bg-white text-blue-700 font-semibold rounded-xl hover:bg-blue-50 transition-all duration-200 shadow-lg">
                             Contact Sales
                         </a>
-                        <a href="/products" className="px-8 py-3 border-2 border-white text-white font-semibold rounded-xl hover:bg-white hover:text-emerald-700 transition-all duration-200">
+                        <a href="/product" className="px-8 py-3 border-2 border-white text-white font-semibold rounded-xl hover:bg-white hover:text-blue-700 transition-all duration-200">
                             View Products
                         </a>
                     </div>

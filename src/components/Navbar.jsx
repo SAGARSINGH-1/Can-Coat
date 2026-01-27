@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { CanCoatLogo } from "./AnimatedComponents";
 import { FaFacebookF, FaInstagram, FaYoutube, FaLinkedinIn, FaTimes } from "react-icons/fa";  // ✅ FaTimes not FaXmark
+import Imglogo from "../assets/logo.png";
 
 export function Navbar() {
     const [isMobileOpen, setIsMobileOpen] = useState(false);
@@ -18,7 +18,12 @@ export function Navbar() {
                 <div className="max-w-[1200px] mx-auto px-4 sm:px-6 py-2.5">
                     <div className="flex items-center justify-between h-[50px]">
                         <motion.a href="/" whileHover={{ scale: 1.01 }} className="flex-shrink-0">
-                            <CanCoatLogo className="w-[75px] sm:w-[82px]" />
+                            <img
+                                src={Imglogo}
+                                alt="Can-Coat Premium Spray Paint"
+                                className="h-auto w-24 object-contain"
+                                loading="lazy"
+                            />
                         </motion.a>
 
                         <div className="hidden md:flex items-center gap-6 lg:gap-8 xl:gap-10">
