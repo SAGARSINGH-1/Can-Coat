@@ -26,7 +26,11 @@ export function Footer() {
                     <div className="text-sm text-slate-600 space-y-2">
                         <div className="flex items-center gap-2">
                             <span>📍</span>
-                            <span>Balour Road, Arya Nagar, Bahadurgarh, Haryana 124507</span>
+                            <span>Gali No. 3, Ward No. 13
+                                Kashmiri Colony, Bahadur Road
+                                Bahadurgarh-124507
+                                Distt. Jhajjar, Haryana
+                            </span>
                         </div>
                         <div className="flex items-center gap-2">
                             <span>📞</span>

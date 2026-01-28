@@ -84,13 +84,31 @@ export function ProductCard({ image, title, description }) {
     );
 }
 
-// 2. HeroBanner - BLUE THEME
-export function HeroBanner({ title, subtitle, ctaText, image }) {
+export function HeroBanner({ title, subtitle, ctaText, heroImageFront, heroImageBack, backgroundImage }) {
     const navigate = useNavigate();
+    const [isFlipped, setIsFlipped] = useState(false);
 
     return (
-        <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-blue-950 py-20">
-            <div className="max-w-5xl mx-auto px-6 grid md:grid-cols-2 items-center gap-12">
+        <section className="relative overflow-hidden py-20">
+            {/* Spray Cans Background + HEAVY DULL OVERLAY */}
+            {backgroundImage && (
+                <div
+                    className="absolute inset-0"
+                    style={{
+                        backgroundImage: `url(${backgroundImage})`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                        backgroundRepeat: 'no-repeat',
+                        backgroundAttachment: 'fixed'
+                    }}
+                />
+            )}
+
+            {/* HEAVY DARK OVERLAY - Makes BG very dull */}
+            <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-slate-900/90 to-blue-950/85" />
+
+            <div className="max-w-5xl mx-auto px-6 grid md:grid-cols-2 items-center gap-12 relative z-10">
+                {/* Content Section - PERFECT TEXT VISIBILITY */}
                 <motion.div
                     initial={{ opacity: 0, x: -40 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -101,21 +119,29 @@ export function HeroBanner({ title, subtitle, ctaText, image }) {
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ delay: 0.2 }}
-                        className="inline-block bg-blue-500/20 text-blue-400 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider"
+                        className="inline-block bg-white/30 backdrop-blur-md text-white px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider border-2 border-white/50 shadow-lg"
                     >
                         Professional Spray Solutions
                     </motion.span>
+
                     <motion.h1
                         initial={{ opacity: 0, y: 25 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.15 }}
-                        className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight"
+                        className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight drop-shadow-2xl [text-shadow:_0_2px_4px_rgba(0,0,0,0.8)]"
                     >
                         {title}
                     </motion.h1>
-                    <p className="text-lg md:text-xl text-slate-300 max-w-md leading-relaxed">
+
+                    <motion.p
+                        initial={{ opacity: 0, y: 15 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.25 }}
+                        className="text-lg md:text-xl text-slate-200/95 max-w-md leading-relaxed drop-shadow-xl [text-shadow:_0_1px_3px_rgba(0,0,0,0.7)]"
+                    >
                         {subtitle}
-                    </p>
+                    </motion.p>
+
                     <motion.div
                         initial={{ opacity: 0, y: 15 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -126,36 +152,84 @@ export function HeroBanner({ title, subtitle, ctaText, image }) {
                             whileHover={{ scale: 1.03 }}
                             whileTap={{ scale: 0.98 }}
                             onClick={() => { navigate("/product") }}
-                            className="cursor-pointer bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white px-8 py-3.5 rounded-xl font-semibold text-base shadow-xl hover:shadow-blue-500/30 transition-all duration-300"
+                            className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white px-8 py-3.5 rounded-xl font-semibold text-base shadow-2xl hover:shadow-blue-500/50 border border-blue-400/50 transition-all duration-300 backdrop-blur-sm"
                         >
                             {ctaText}
                         </motion.button>
+
                         <motion.button
                             onClick={() => { navigate("/contact") }}
                             whileHover={{ scale: 1.01 }}
-                            className="cursor-pointer border border-white/40 hover:border-white/70 text-white px-8 py-3.5 rounded-xl font-medium backdrop-blur-sm transition-all duration-300"
+                            className="bg-white/20 backdrop-blur-md text-white px-8 py-3.5 rounded-xl font-semibold border-2 border-white/40 hover:bg-white/30 hover:border-white/60 shadow-xl hover:shadow-white/30 transition-all duration-300"
                         >
                             Contact Us
                         </motion.button>
                     </motion.div>
                 </motion.div>
+
+                {/* 3D FLIP PRODUCT CONTAINER */}
                 <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 0.2, duration: 0.7 }}
-                    className="relative"
+                    className="relative cursor-pointer perspective-1000"
+                    onMouseEnter={() => setIsFlipped(true)}
+                    onMouseLeave={() => setIsFlipped(false)}
                 >
-                    <img
-                        src={image}
-                        alt="Professional spray paint application"
-                        className="w-full max-w-lg mx-auto rounded-2xl shadow-2xl"
-                        loading="lazy"
-                    />
+                    {/* Flip Card Container */}
+                    <div className="relative w-full h-[420px] max-w-lg mx-auto preserve-3d transition-transform duration-1000 ease-in-out"
+                        style={{
+                            transform: isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)',
+                            transformStyle: 'preserve-3d'
+                        }}>
+
+                        {/* FRONT SIDE */}
+                        <div className="absolute inset-0 bg-white/20 backdrop-blur-xl rounded-3xl p-6 md:p-8 shadow-2xl border border-white/30 backface-hidden">
+                            <img
+                                src={heroImageFront}
+                                alt="Product Front"
+                                className="w-full h-full max-w-lg mx-auto rounded-2xl shadow-2xl object-contain"
+                                loading="lazy"
+                            />
+                        </div>
+
+                        {/* BACK SIDE */}
+                        <div className="absolute inset-0 bg-white/20 backdrop-blur-xl rounded-3xl p-6 md:p-8 shadow-2xl border border-white/30 backface-hidden rotate-y-180">
+                            <img
+                                src={heroImageBack}
+                                alt="Product Back"
+                                className="w-full h-full max-w-lg mx-auto rounded-2xl shadow-2xl object-contain"
+                                loading="lazy"
+                            />
+                        </div>
+                    </div>
+
+                    {/* Floating badges */}
+                    <motion.div
+                        className="absolute -top-4 -right-4 bg-gradient-to-r from-blue-500 to-blue-600 text-white px-4 py-2 rounded-br-xl font-bold text-sm shadow-xl border border-white/50"
+                        initial={{ scale: 0, rotate: 180 }}
+                        animate={{ scale: 1, rotate: 0 }}
+                        transition={{ delay: 0.4, duration: 0.4, type: "spring" }}
+                    >
+                        NEW
+                    </motion.div>
+
+                    <motion.div
+                        className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-white/95 text-blue-900 px-6 py-2 rounded-full text-xs font-bold shadow-lg border border-white/50"
+                        initial={{ scale: 0 }}
+                        animate={{ scale: 1 }}
+                        transition={{ delay: 0.5, type: "spring" }}
+                    >
+                        Industrial Grade
+                    </motion.div>
                 </motion.div>
             </div>
         </section>
     );
 }
+
+
+
 
 // 3. CategoryFilter - BLUE THEME
 export function CategoryFilter({ active, label, onClick }) {

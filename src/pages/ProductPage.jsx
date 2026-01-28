@@ -1,7 +1,8 @@
-// ProductPage.jsx - SINGLE PRODUCT ONLY (Your Original Design Perfect!)
+// ProductPage.jsx - CAN-COAT PREMIUM (Original Blue Theme - Data Only Updated)
 import { motion } from 'framer-motion';
 import { Phone, Mail, Download, Shield, Zap, SprayCan, Target, AlertCircle } from 'lucide-react';
 import product from '../assets/product.png';
+import ProductContainer from '../components/ProductContainer.jsx';
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -32,7 +33,7 @@ const ProductPage = () => {
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
         >
-            {/* Hero Section - YOUR ORIGINAL PERFECT LAYOUT */}
+            {/* Hero Section - ORIGINAL LAYOUT */}
             <section className="py-12 px-4 md:py-16">
                 <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-start">
                     {/* Product Image - ORIGINAL */}
@@ -49,7 +50,7 @@ const ProductPage = () => {
                         >
                             <motion.img
                                 src={product}
-                                alt="Color-On 2K Spray Paint"
+                                alt="Can-Coat Premium Spray Paint"
                                 className="w-full max-w-sm mx-auto h-80 object-contain shadow-xl rounded-xl"
                                 initial={{ scale: 0.95 }}
                                 whileHover={{ scale: 1.05 }}
@@ -69,7 +70,7 @@ const ProductPage = () => {
                                 animate={{ scale: 1 }}
                                 transition={{ delay: 0.5, type: "spring" }}
                             >
-                                2K Polyurethane
+                                Industrial Grade
                             </motion.div>
                         </motion.div>
                     </motion.div>
@@ -88,7 +89,7 @@ const ProductPage = () => {
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.6 }}
                                 >
-                                    Color-On 2K Spray Paint
+                                    Can-Coat Premium Spray Paint
                                 </motion.h1>
                                 <motion.p
                                     className="text-lg md:text-xl font-semibold text-slate-700 mt-1"
@@ -96,7 +97,7 @@ const ProductPage = () => {
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: 0.2, duration: 0.5 }}
                                 >
-                                    India's First Polyurethane Touchup Spray
+                                    Industrial Grade, Fast Drying, High Coverage
                                 </motion.p>
                             </motion.div>
 
@@ -104,7 +105,7 @@ const ProductPage = () => {
                                 className="text-base md:text-lg text-slate-600 leading-relaxed max-w-md"
                                 variants={itemVariants}
                             >
-                                India's first 2K polyurethane touchup spray engineered for bodyshop-level hardness and petrol resistance.
+                                Can-Coat Premium Spray Paint is a high-performance, fast-drying industrial spray paint designed to deliver a smooth, durable, and long-lasting finish on powder-coated and pre-painted metal surfaces.
                             </motion.p>
 
                             {/* Contact Section - 100% ORIGINAL */}
@@ -165,7 +166,12 @@ const ProductPage = () => {
                 </div>
             </section>
 
-            {/* ALL YOUR ORIGINAL SECTIONS - NOTHING CHANGED */}
+
+            <section className="border-t border-slate-200 my-12 mx-4 md:mx-0">
+                <ProductContainer />
+            </section>
+
+            {/* Features Section - ORIGINAL */}
             <section className="py-12 px-4 md:py-16 bg-white/40 backdrop-blur-sm">
                 <div className="max-w-5xl mx-auto">
                     <motion.h2
@@ -179,17 +185,19 @@ const ProductPage = () => {
                     </motion.h2>
 
                     <motion.div
-                        className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
+                        className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
                         initial="hidden"
                         whileInView="visible"
                         variants={containerVariants}
                         viewport={{ once: true }}
                     >
                         {[
-                            { icon: Zap, title: "Fast-Drying", desc: "Touch-dry in 10 mins", color: "text-blue-600" },
-                            { icon: Shield, title: "Petrol Resistance", desc: "Bodyshop level", color: "text-blue-600" },
-                            { icon: SprayCan, title: "2K Polyurethane", desc: "Professional finish", color: "text-blue-500" },
-                            { icon: Target, title: "UV Protection", desc: "Long lasting", color: "text-blue-600" }
+                            { icon: Zap, title: "Fast-Drying Formula", desc: "Surface becomes touch-dry within 5–10 minutes", color: "text-blue-600" },
+                            { icon: Shield, title: "High Adhesion", desc: "Excellent bonding on metal & powder-coated surfaces", color: "text-blue-600" },
+                            { icon: SprayCan, title: "Smooth Finish", desc: "No runs, dripping, unevenness, or patch marks", color: "text-blue-500" },
+                            { icon: Target, title: "Industrial Durability", desc: "Rust-resistant, scratch-resistant protection", color: "text-blue-600" },
+                            { icon: Download, title: "High Coverage", desc: "1.2–1.5 sqm per can", color: "text-blue-600" },
+                            { icon: Shield, title: "Custom Shades", desc: "OEM color matching available", color: "text-blue-600" }
                         ].map((feature, i) => (
                             <motion.div
                                 key={i}
@@ -224,7 +232,7 @@ const ProductPage = () => {
                 </div>
             </section>
 
-            {/* Technical Specifications - YOUR ORIGINAL */}
+            {/* Technical Specifications - ORIGINAL */}
             <section className="py-12 px-4 md:py-16">
                 <div className="max-w-4xl mx-auto">
                     <motion.h2
@@ -257,11 +265,12 @@ const ProductPage = () => {
                             </motion.div>
                             <div className="space-y-3 text-xs md:text-sm">
                                 {[
-                                    { label: "Net Content", value: "400g" },
-                                    { label: "Coverage", value: "1.5-2.0 sqm/can" },
-                                    { label: "Dry Time", value: "10 mins touch dry" },
-                                    { label: "Coats", value: "2-3 light coats" },
-                                    { label: "Hardness", value: "Bodyshop level" }
+                                    { label: "Net Content", value: "300g / 440 ml" },
+                                    { label: "Coverage", value: "1.2–1.5 sqm/can" },
+                                    { label: "Surface Dry", value: "5 minutes" },
+                                    { label: "Hard Dry", value: "20–30 minutes" },
+                                    { label: "Spray Distance", value: "10–12 inches" },
+                                    { label: "Recommended Coats", value: "2–3 light coats" }
                                 ].map((spec, i) => (
                                     <motion.div
                                         key={i}
@@ -277,7 +286,7 @@ const ProductPage = () => {
                             </div>
                         </motion.div>
 
-                        {/* Application Guide - 100% ORIGINAL */}
+                        {/* Application Guide - ORIGINAL */}
                         <motion.div
                             variants={itemVariants}
                             className="bg-gradient-to-br from-blue-50/80 to-blue-100/50 p-6 rounded-xl border border-blue-200 shadow-md lg:col-span-2 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
@@ -293,7 +302,6 @@ const ProductPage = () => {
                                 Application Guide
                             </motion.div>
 
-                            {/* ALL YOUR ORIGINAL CONTENT - NOTHING REMOVED */}
                             <motion.div
                                 className="mb-6 p-4 bg-white/80 rounded-lg border-l-4 border-blue-400"
                                 initial={{ opacity: 0, y: 20 }}
@@ -301,11 +309,10 @@ const ProductPage = () => {
                                 transition={{ delay: 0.2 }}
                             >
                                 <p className="text-sm text-slate-700 leading-relaxed">
-                                    India's first 2K polyurethane touchup spray for professional bodyshop results.
+                                    Perfect for powder-coated touch-up applications on fabricated parts, machinery, auto components, gates, grills, and industrial equipment.
                                 </p>
                             </motion.div>
 
-                            {/* Rest of your exact original content continues... */}
                             <div className="grid md:grid-cols-2 gap-4 mb-6">
                                 <div>
                                     <h4 className="font-semibold text-slate-900 mb-3 flex items-center gap-2">
@@ -315,19 +322,19 @@ const ProductPage = () => {
                                     <ul className="space-y-2 text-xs text-slate-700">
                                         <motion.li variants={itemVariants} className="flex items-start gap-2">
                                             <span className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-1.5 flex-shrink-0"></span>
-                                            Shake 2 mins until ball moves freely
+                                            Shake vigorously for 60 seconds
                                         </motion.li>
                                         <motion.li variants={itemVariants} className="flex items-start gap-2">
                                             <span className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-1.5 flex-shrink-0"></span>
-                                            Clean surface properly before application
-                                        </motion.li>
-                                        <motion.li variants={itemVariants} className="flex items-start gap-2">
-                                            <span className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-1.5 flex-shrink-0"></span>
-                                            Test small area first
+                                            Clean surface - remove dust, oil, rust
                                         </motion.li>
                                         <motion.li variants={itemVariants} className="flex items-start gap-2">
                                             <span className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-1.5 flex-shrink-0"></span>
                                             Spray 10-12" distance, 2-3 light coats
+                                        </motion.li>
+                                        <motion.li variants={itemVariants} className="flex items-start gap-2">
+                                            <span className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-1.5 flex-shrink-0"></span>
+                                            Upside down nozzle clear after use
                                         </motion.li>
                                     </ul>
                                 </div>
@@ -338,9 +345,9 @@ const ProductPage = () => {
                                         Pro Tips
                                     </h4>
                                     <ul className="space-y-2 text-xs text-slate-700">
-                                        <motion.li variants={itemVariants}>15-35°C ideal temp</motion.li>
-                                        <motion.li variants={itemVariants}>72hr dry before polish</motion.li>
-                                        <motion.li variants={itemVariants}>Clean tip with thinner</motion.li>
+                                        <motion.li variants={itemVariants}>15-35°C ideal temperature</motion.li>
+                                        <motion.li variants={itemVariants}>Custom OEM shade matching</motion.li>
+                                        <motion.li variants={itemVariants}>Polish after 24hr drying</motion.li>
                                     </ul>
                                 </div>
                             </div>
@@ -356,9 +363,10 @@ const ProductPage = () => {
                                     <h4 className="font-semibold text-blue-900 text-sm">Safety Precautions</h4>
                                 </div>
                                 <ul className="space-y-1 text-xs text-blue-900 list-disc pl-5">
-                                    <motion.li variants={itemVariants}>Protect from sunlight</motion.li>
-                                    <motion.li variants={itemVariants}>Well-ventilated area only</motion.li>
-                                    <motion.li variants={itemVariants}>Keep from children</motion.li>
+                                    <motion.li variants={itemVariants}>Highly flammable - no open flames</motion.li>
+                                    <motion.li variants={itemVariants}>Well-ventilated areas only</motion.li>
+                                    <motion.li variants={itemVariants}>Keep away from children</motion.li>
+                                    <motion.li variants={itemVariants}>Do not puncture or incinerate</motion.li>
                                 </ul>
                             </motion.div>
                         </motion.div>

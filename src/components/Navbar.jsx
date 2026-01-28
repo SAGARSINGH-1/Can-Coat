@@ -42,7 +42,8 @@ export function Navbar() {
 
                             <div className="flex items-center gap-2">
                                 <motion.a
-                                    href="tel:+91958291715"
+                                    href="https://wa.me/+919302237448"
+                                    target="_blank"
                                     whileHover={{ scale: 1.02 }}
                                     className="flex items-center gap-1 bg-[#16a34a] hover:bg-[#15803d] text-white text-xs font-semibold px-2.5 py-1.5 rounded-[6px] shadow-sm hover:shadow-md transition-all whitespace-nowrap"
                                 >
@@ -116,7 +117,9 @@ export function Navbar() {
 
                                 <div className="pt-3 pb-2 border-t border-slate-200">
                                     <motion.a
-                                        href="tel:+91958291715"
+                                        href="https://wa.me/+919302237448"
+                                        target="_blank"          // ← ADD THIS
+                                        rel="noopener noreferrer" // ← ADD THIS (security)
                                         className="block w-full py-2 px-3 text-base font-semibold text-[#16a34a] hover:text-[#15803d] hover:bg-slate-100 rounded-lg"
                                         whileTap={{ scale: 0.98 }}
                                     >

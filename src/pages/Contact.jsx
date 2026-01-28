@@ -107,10 +107,13 @@ export default function Contact() {
 
                         <div className="mt-4 space-y-4">
                             <div className="rounded-xl border border-blue-100 p-6 bg-gradient-to-r from-blue-50/50 to-blue-25">
-                                <p className="text-sm font-semibold text-slate-900 mb-1">Bahadurgarh (HR)</p>
                                 <p className="text-sm text-slate-600 leading-relaxed">
-                                    Balour Road, Arya Nagar<br />
-                                    Bahadurgarh, Haryana 124507
+                                    Gali No. 3, Ward No. 13
+                                    <br />
+                                    Kashmiri Colony, Bahadur Road
+                                    Bahadurgarh - 124507
+                                    <br />
+                                    Distt. Jhajjar, Haryana
                                 </p>
                             </div>
                         </div>

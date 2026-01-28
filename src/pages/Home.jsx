@@ -8,6 +8,9 @@ import {
 } from "../components/AnimatedComponents";
 import { ProductDetail } from "../components/ProductDetail";
 import productImage from "../assets/product.png";
+import bgimg from "../assets/bg.png";
+import heroPng from "../assets/hero.png";
+import herobPng from "../assets/herob.png";
 
 export default function Home() {
     const products = [
@@ -41,11 +44,14 @@ export default function Home() {
     return (
         <main className="flex-1 pt-10">
             <HeroBanner
-                title="Can-Coat Paints"
-                subtitle="India's leading aerosol spray paint manufacturer. Computerized color matching with in-house R&D and automatic filling plants."
+                title="Can-Coat Premium Spray Paint"
+                subtitle="Industrial grade touch-up spray"
                 ctaText="View Products"
-                image="https://www.com-paint.com/wp-content/uploads/Com-Paint-2K-Can-Disection-web.jpg"
+                heroImageFront={heroPng}      // ← FRONT image (file:XXX)
+                heroImageBack={herobPng}       // ← BACK image (file:YYY)
+                backgroundImage={bgimg}
             />
+
 
             <StatsCounter />
             <FAQSection />
